@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="header-eyebrow">Personal Finance</div>
+        <h1>Expense Tracker</h1>
+      </header>
+
+      <div class="balance-card">
+        <div class="balance-label">Your Balance</div>
+        <div class="balance-amount" id="balance">0.00</div>
+        <div class="summary-row">
+          <div class="summary-box income">
+            <div class="s-label"><span class="s-icon"></span>Income</div>
+            <div class="s-amount" id="income-total">0.00</div>
+          </div>
+          <div class="summary-box expense">
+            <div class="s-label"><span class="s-icon"></span>Expenses</div>
+            <div class="s-amount" id="expense-total">0.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-grid">
+        <div class="panel" style="animation: fadeDown 0.8s 0.15s ease both">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="panel-title-dot"></span>
+              Transactions
+            </div>
+            <div class="tx-count" id="tx-count">0 entries</div>
+          </div>
+          <div class="tx-list" id="tx-list">
+            <div class="empty-state">
+              <div class="empty-icon">💸</div>
+              <div class="empty-text">
+                No transactions yet.<br />Add your first one!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel form-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span
+                class="panel-title-dot"
+                style="
+                  background: var(--blue-3);
+                  box-shadow: 0 0 10px var(--blue-3);
+                "
+              ></span>
+              Add Transaction
+            </div>
+          </div>
+          <div class="form-body">
+            <div class="type-toggle">
+              <button
+                class="toggle-btn active-income"
+                id="btn-income"
+                onclick="setType('income')"
+              >
+                📈 Income
+              </button>
+              <button
+                class="toggle-btn"
+                id="btn-expense"
+                onclick="setType('expense')"
+              >
+                📉 Expense
+              </button>
+            </div>
+
+            <div class="field">
+              <label>Description</label>
+              <input
+                type="text"
+                id="desc"
+                placeholder="e.g. Freelance payment, Groceries…"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="field">
+              <label>Amount</label>
+              <input
+                type="number"
+                id="amount"
+                placeholder="0.00"
+                min="0"
+                step="0.01"
+                autocomplete="off"
+              />
+              <div class="amount-hint">
+                Enter a positive number regardless of type
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Category</label>
+              <select id="category">
+                <option value="">— Select category —</option>
+                <optgroup label="Income">
+                  <option>💼 Salary</option>
+                  <option>💰 Freelance</option>
+                  <option>📈 Investment</option>
+                  <option>🎁 Gift</option>
+                  <option>🔄 Refund</option>
+                </optgroup>
+                <optgroup label="Expenses">
+                  <option>🛒 Groceries</option>
+                  <option>🍔 Food & Dining</option>
+                  <option>🚗 Transport</option>
+                  <option>🏠 Housing</option>
+                  <option>💊 Healthcare</option>
+                  <option>🎮 Entertainment</option>
+                  <option>👗 Shopping</option>
+                  <option>📚 Education</option>
+                  <option>⚡ Utilities</option>
+                  <option>✈️ Travel</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <button
+              class="submit-btn income-btn"
+              id="submit-btn"
+              onclick="addTransaction()"
+            >
+              + Add Income
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
