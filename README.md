@@ -80,7 +80,7 @@ Expense Tracker is a lightweight personal finance management application that en
 ## 📁 Project Structure
 
 ```bash
-Expense-Tracker/
+finance-tracker/
 │
 ├── index.html
 ├── style.css
