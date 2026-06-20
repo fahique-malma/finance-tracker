@@ -109,27 +109,6 @@ finance-tracker/
 
 ---
 
-## Data Storage
-
-This application uses the browser's Local Storage API.
-
-Stored data includes:
-
-```javascript
-{
-  id: "unique-id",
-  type: "income/expense",
-  desc: " ",
-  amount:  ,
-  category: " ",
-  date: " "
-}
-```
-
-Data remains available until manually cleared from the browser.
-
----
-
 ## Responsive Design
 
 The application is optimized for:
